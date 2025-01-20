@@ -8,10 +8,17 @@ function fizzbuzz() {
     // Put your code here...
 
     for (let i = 1; i <= 100; i++) {
-        if (i % 3) {
-            console.log(i)
+        const isMultipleOfThree = !(i % 3);
+        const isMultipleOfFive = !(i % 5);
+
+        if (isMultipleOfThree && isMultipleOfFive) {
+            console.log('FizzBuzz');
+        } else if (isMultipleOfThree) {
+            console.log('Fizz');
+        } else if (isMultipleOfFive) {
+            console.log('Buzz');
         } else {
-            console.log('Fizz')
+            console.log(i)
         }
     }
 
