@@ -7,18 +7,25 @@ function fizzbuzz() {
 
     // Put your code here...
 
-    for (let i = 1; i <= 100; i++) {
-        const isMultipleOfThree = !(i % 3);
-        const isMultipleOfFive = !(i % 5);
+    for (let num = 1; num <= 100; num++) {
+        const isMultipleOfThree = !(num % 3);
+        const isMultipleOfFive = !(num % 5);
+        const isMultipleOfSeven = !(num % 7);
 
-        if (isMultipleOfThree && isMultipleOfFive) {
+        if (isMultipleOfSeven && isMultipleOfThree) {
+            console.log('FizzBang');
+        } else if (isMultipleOfSeven && isMultipleOfFive) {
+            console.log('BuzzBang');
+        } else if (isMultipleOfThree && isMultipleOfFive) {
             console.log('FizzBuzz');
         } else if (isMultipleOfThree) {
             console.log('Fizz');
         } else if (isMultipleOfFive) {
             console.log('Buzz');
+        } else if(isMultipleOfSeven) {
+            console.log('Bang');
         } else {
-            console.log(i)
+            console.log(num)
         }
     }
 
