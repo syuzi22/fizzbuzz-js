@@ -12,33 +12,41 @@ function fizzbuzz() {
         const isMultipleOfFive = !(num % 5);
         const isMultipleOfSeven = !(num % 7);
         const isMultipleOfEleven = !(num % 11);
-        let result = '';
+        const isMultipleOfThirteen = !(num % 13);
+        const isMultipleOfSeventeen = !(num % 17);
+        let output = [];
 
         if (isMultipleOfThree) {
-            result += 'Fizz'
+            output.push('Fizz');
         }  
+
+        if (isMultipleOfThirteen) {
+            output.push('Fezz');
+        }
         
         if (isMultipleOfFive) {
-            result += 'Buzz';
+            output.push('Buzz');
         }  
         
         if (isMultipleOfSeven) {
-            result += 'Bang';
+            output.push('Bang');
         }  
         
         if (isMultipleOfEleven) {
-            result += 'Bong';
+            output = output.filter(value => value === 'Fezz');
+            output.push('Bong');
         }  
-        
-        if (!result) {
-            result = num;
-        }
-        
 
-        return result;
+        if (!!output.length) {
+            isMultipleOfSeventeen && output.reverse();
+        } else {
+            output.push(num);
+        }
+
+        return output.join('');
     }
 
-    for (let num = 1; num <= 100; num++) {
+    for (let num = 1; num <= 260; num++) {
         console.log(formString(num))
     }
     
